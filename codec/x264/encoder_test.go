@@ -31,6 +31,7 @@ func pngToImage(b *testing.B, loc string) (image.Image, error) {
 func resizeImg(b *testing.B, img image.Image, width uint, height uint) image.Image {
 	b.Helper()
 	fmt.Println("OUAIS LA FAMILLE")
+	fmt.Println("OUAIS LA FAMILLE2")
 	newImage := resize.Resize(width, height, img, resize.Lanczos3)
 	return newImage
 }
