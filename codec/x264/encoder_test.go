@@ -7,6 +7,7 @@ import (
 	"github.com/nfnt/resize"
 	"go.viam.com/test"
 	"image"
+	"fmt"
 	"image/color"
 	"image/jpeg"
 	"image/png"
@@ -35,6 +36,7 @@ func resizeImg(b *testing.B, img image.Image, width uint, height uint) image.Ima
 
 func convertToYCbCr(b *testing.B, src image.Image) (image.Image, error) {
 	b.Helper()
+	fmt.Println("OUAIS POTO")
 	bf := new(bytes.Buffer)
 	err := jpeg.Encode(bf, src, nil)
 	test.That(b, err, test.ShouldBeNil)
